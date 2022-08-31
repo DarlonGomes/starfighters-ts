@@ -49,7 +49,7 @@ export async function starBattle (req: Request, res: Response){
 export async function starRanking(req: Request, res: Response){
 try {
     const {rows: response} = await starfighter.fighterRank();
-    return res.status(200).send(response);
+    return res.status(200).send({figthers: response});
 } catch (error) {
     return res.status(500).send(error)
 }
